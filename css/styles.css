@@ -6,6 +6,9 @@
   --pressed-state-color: #404bbf;
   --accent-color: #e7e9fc;
   --light-background-color: #f4f4fd;
+  --lin-gradient: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7));
+  --border-color: #8e8f99;
+  --success-messages-color: #31d0aa;
 }
 
 h1,
@@ -50,9 +53,6 @@ body {
   width: 1158px;
   margin: 0 auto;
   padding: 0px 15px;
-
-  /* outline: 2px solid red; */
-  /* background-color: #c5529b; */
 }
 
 .button {
@@ -179,9 +179,20 @@ body {
 
 /* =============Hero=============== */
 .hero {
+  max-width: 1440px;
+  height: 600px;
+
   background-color: var(--dark-background-color);
+
   padding-top: 188px;
   padding-bottom: 188px;
+  margin-right: auto;
+  margin-left: auto;
+
+  background-image: var(--lin-gradient), url(../images/people-office.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero .container {
@@ -260,6 +271,20 @@ body {
   margin-bottom: 0px;
 }
 
+.feature-item .thumb-icon {
+  width: 100%;
+  height: 112px;
+  border-radius: 4px;
+  margin: 0px auto 8px auto;
+  padding: 24px 0px 24px 0px;
+  text-align: center;
+  background-color: var(--light-background-color);
+}
+
+.feature-item .thumb-icon > use {
+  display: block;
+}
+
 .work-list {
   display: flex;
   gap: 24px;
@@ -282,6 +307,8 @@ section.section-team {
   width: calc((100% - 72px) / 4);
   margin-right: 24px;
   margin-bottom: 24px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .team-item:nth-child(4n) {
@@ -307,6 +334,65 @@ section.section-team {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
+}
+
+.team-soc-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.team-soc-item {
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+}
+
+.team-soc-link {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-active-color);
+}
+
+.team-soc-link:is(:hover, :focus) {
+  background-color: var(--pressed-state-color);
+}
+
+.customers-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.customers-link:is(:hover, :focus) {
+  border-color: var(--pressed-state-color);
+}
+
+.customers-link:is(:hover, :focus) .customers-icon {
+  fill: var(--pressed-state-color);
+}
+
+.customers-item {
+  width: calc((100%-120px) / 6);
+  height: 88px;
+}
+
+.customers-link {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customers-icon {
+  fill: var(--border-color);
 }
 
 /* =============Footer=============== */
@@ -338,11 +424,51 @@ section.section-team {
   color: var(--accent-color);
 }
 
+.footer-list {
+  display: flex;
+  gap: 120px;
+}
+
+.footer-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+
+  color: var(--important-color);
+  margin-bottom: 16px;
+}
+
+.footer-soc-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.footer-soc-item {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-soc-link {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-text-color);
+}
+
+.footer-soc-link:is(:hover, :focus) {
+  background-color: var(--success-messages-color);
+}
+
 /* =============Portfolio=============== */
 .section-portfolio {
   padding-top: 96px;
   padding-bottom: 120px;
 }
+
 .button-filter {
   padding: 12px 24px;
 
@@ -354,6 +480,8 @@ section.section-team {
 .button-filter:is(:hover, :focus) {
   color: var(--important-color);
   background-color: var(--pressed-state-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .project-card-list .title {
@@ -401,9 +529,8 @@ section.section-team {
   text-align: left;
 }
 
-.team-list .title {
-  color: var(--dark-background-color);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+.project-card-item:hover {
+  border: 1px solid var(--light-background-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
